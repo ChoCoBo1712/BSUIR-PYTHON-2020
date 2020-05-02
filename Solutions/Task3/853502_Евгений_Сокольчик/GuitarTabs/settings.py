@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j3mn55hxpg3$)%30e!dkduyz%pq*e9o2*p*@zpljelbg58139b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'GuitarTabs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nutceoej',
-        'USER': 'nutceoej',
-        'PASSWORD': '74J5pdidBMY9gVP4gS4ELMWdTkY7QnlF',
-        'HOST': 'balarama.db.elephantsql.com',
+        'NAME': 'd5hvbaunsjvdn',
+        'USER': 'rufrqjijzrfsvj',
+        'PASSWORD': '9ea31e437fa6f7d3a0111fb3e61faa5d6996128392d3cda71d7b288f91c1366b',
+        'HOST': 'ec2-46-137-177-160.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -140,6 +140,7 @@ LOGIN_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
