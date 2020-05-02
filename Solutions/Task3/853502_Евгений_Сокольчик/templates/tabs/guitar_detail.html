@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ guitar.name }}</h2>
+  <p><strong>Manufacturers:</strong>
+      {% for manufacturer in guitar.manufacturers.all %}
+          <li>
+          <a href="{{ manufacturer.get_absolute_url }}">{{ manufacturer.name }}</a>
+          </li>
+      {% endfor %}
+  </p>
+  <p><strong>Suitable For:</strong>
+      {% for genre in guitar.genres.all %}
+          <li>
+          <a href="{{ genre.get_absolute_url }}">{{ genre.name }}</a>
+          </li>
+      {% endfor %}
+  </p>
+  <p><strong>Description:</strong> {{ guitar.description }}</p>
+  <p><strong>Pictures:</strong>
+      {% for image in guitar.guitarpictures_set.all %}
+          <img src="{{ image.image.url }}", height="100" width="100">
+      {% endfor %}
+  </p>
+  <p><strong>Guitarists:</strong>
+      {% for guitarist in guitar.guitarists.all %}
+          <a href="{{ guitarist.get_absolute_url }}">{{ guitarist.name }}</a>
+      {% endfor %}
+  </p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Guitars List</h2>
+  <ul>
+    {% for guitar in guitar_list %}
+      <li>
+        <a href="{{ guitar.get_absolute_url }}">{{ guitar.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

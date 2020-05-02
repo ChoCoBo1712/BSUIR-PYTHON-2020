@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ guitarist.name }}</h2>
+    <p><strong>Picture:</strong>
+      {% for image in guitarist.guitaristpictures_set.all %}
+          <img src="{{ image.image.url }}", height="100" width="100">
+      {% endfor %}
+  </p>
+    <p><strong>Age:</strong> {{ guitarist.age }}</p>
+  <p><strong>Description:</strong> {{ guitarist.description }}</p>
+{% endblock %}

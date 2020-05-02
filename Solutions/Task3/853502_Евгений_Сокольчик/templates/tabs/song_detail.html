@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ song.name }} - {{ song.author }}</h2>
+  <p><strong>Lyrics:</strong> {{ song.lyrics }}</p>
+    <p><strong>Genres:</strong>
+      {% for genre in song.genres.all %}
+          <a href="{{ genre.get_absolute_url }}">{{ genre.name }}</a>
+      {% endfor %}
+  </p>
+    <p><strong>Tab:</strong>
+        <a href="{{ song.tab }}">{{ song.tab }}</a>
+    </p>
+    {% load embed_video_tags %}
+    {% video song.song as my_video %}
+    {% video my_video "small" %}
+    {% endvideo %}
+{% endblock %}
